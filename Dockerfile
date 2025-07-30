@@ -55,4 +55,4 @@ RUN npm install
 EXPOSE 3000
 
 # Start the app
-CMD ["ts-node", "server/Index.ts"]
+CMD ["ts-node", "/app/server/Index.ts"]
