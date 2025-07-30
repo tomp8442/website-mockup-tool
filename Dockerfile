@@ -39,9 +39,6 @@ RUN apt-get update && apt-get install -y \
   xdg-utils \
   && rm -rf /var/lib/apt/lists/*
 
-# Install Puppeteer, ts-node, and TypeScript globally
-RUN npm i -g puppeteer ts-node typescript
-
 # Create app directory
 WORKDIR /app
 
@@ -51,8 +48,11 @@ COPY . .
 # Install dependencies
 RUN npm install
 
+# Build TypeScript and client
+RUN npm run build
+
 # Expose port
 EXPOSE 3000
 
-# Start the app
-CMD ["ts-node", "/app/server/Index.ts"]
+# Start the compiled server (from dist/)
+CMD ["npm", "run", "start"]
