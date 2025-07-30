@@ -73,7 +73,7 @@ export class MockupGenerator {
       // Navigate to URL with timeout
       await page.goto(request.url, {
         waitUntil: 'networkidle2',
-        timeout: 30000
+        timeout: 60000
       });
 
       // Take screenshot of viewport only (not full page)
