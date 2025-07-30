@@ -39,8 +39,8 @@ RUN apt-get update && apt-get install -y \
   xdg-utils \
   && rm -rf /var/lib/apt/lists/*
 
-# Install Puppeteer and Chromium
-RUN npm i -g puppeteer
+# Install Puppeteer, ts-node, and TypeScript globally
+RUN npm i -g puppeteer ts-node typescript
 
 # Create app directory
 WORKDIR /app
@@ -55,4 +55,4 @@ RUN npm install
 EXPOSE 3000
 
 # Start the app
-CMD ["npx", "ts-node", "server/Index.ts"]
+CMD ["ts-node", "server/Index.ts"]
