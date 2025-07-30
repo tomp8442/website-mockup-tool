@@ -1,6 +1,6 @@
 FROM node:20-slim
 
-# Install necessary dependencies for Chromium
+# Install Puppeteer dependencies
 RUN apt-get update && apt-get install -y \
   ca-certificates \
   fonts-liberation \
@@ -39,20 +39,25 @@ RUN apt-get update && apt-get install -y \
   xdg-utils \
   && rm -rf /var/lib/apt/lists/*
 
+# Set Puppeteer environment variables to use bundled Chromium
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
+ENV PUPPETEER_EXECUTABLE_PATH=/app/node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
+
 # Create app directory
 WORKDIR /app
 
 # Copy app files
 COPY . .
 
-# Install dependencies
+# Install app dependencies including Puppeteer and Chromium
 RUN npm install
 
-# Build TypeScript and client
+# Build your app
 RUN npm run build
 
-# Expose port
+# Expose the port (you can change this if needed)
 EXPOSE 3000
 
-# Start the compiled server (from dist/)
-CMD ["npm", "run", "start"]
+# Start your app
+CMD ["npm", "start"]
+
