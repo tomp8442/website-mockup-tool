@@ -228,7 +228,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-primary">Generating mockup...</p>
-                      <p className="text-xs text-blue-600">This may take 10-30 seconds</p>
+                      <p className="text-xs text-blue-600">This may take up to a minute</p>
                     </div>
                   </div>
                   <Progress value={progress} className="h-2" />
@@ -300,82 +300,6 @@ export default function Home() {
           </Card>
         </div>
 
-        {/* Features Section */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Bolt className="w-8 h-8 text-primary" />
-            </div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-2">Lightning Fast</h4>
-            <p className="text-slate-600 text-sm">Generate professional mockups in under 30 seconds with our optimized rendering engine</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-green-500" />
-            </div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-2">Privacy First</h4>
-            <p className="text-slate-600 text-sm">No data stored, no registration required. Your URLs are processed securely and temporarily</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-purple-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Palette className="w-8 h-8 text-purple-500" />
-            </div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-2">Customizable</h4>
-            <p className="text-slate-600 text-sm">Multiple device frames and quality options. Bring your own PNG mockup for custom branding</p>
-          </div>
-        </div>
-
-        {/* Instructions Section */}
-        <div className="mt-16 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-white">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4">
-              <Upload className="w-5 h-5 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold">Custom Device Frames</h3>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-lg font-semibold mb-3 flex items-center">
-                <Upload className="w-4 h-4 mr-2 text-blue-400" />
-                Using Your Own Mockup
-              </h4>
-              <ol className="space-y-2 text-slate-300">
-                <li className="flex items-start">
-                  <span className="bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</span>
-                  Create a PNG file with transparent screen area
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</span>
-                  Place the file in <code className="bg-slate-700 px-2 py-1 rounded text-xs">/server/assets/</code>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</span>
-                  Update the mockup selection dropdown
-                </li>
-              </ol>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-3 flex items-center">
-                <WandSparkles className="w-4 h-4 mr-2 text-purple-400" />
-                Tips for Best Results
-              </h4>
-              <ul className="space-y-2 text-slate-300">
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                  Use 16:10 aspect ratio for laptop screens
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                  Ensure adequate padding around screen area
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                  Save in high resolution (2000px+ width)
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </main>
 
       {/* Footer */}
