@@ -39,25 +39,17 @@ RUN apt-get update && apt-get install -y \
   xdg-utils \
   && rm -rf /var/lib/apt/lists/*
 
-# Set Puppeteer environment variables to use bundled Chromium
+# Optional: force Puppeteer to download Chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
-ENV PUPPETEER_EXECUTABLE_PATH=/app/node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
 
-# Create app directory
 WORKDIR /app
 
-# Copy app files
 COPY . .
 
-# Install app dependencies including Puppeteer and Chromium
 RUN npm install
 
-# Build your app
 RUN npm run build
 
-# Expose the port (you can change this if needed)
 EXPOSE 3000
 
-# Start your app
 CMD ["npm", "start"]
-
